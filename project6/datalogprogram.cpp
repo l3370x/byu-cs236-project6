@@ -18,6 +18,10 @@ string DatalogProgram::toString() {
 	return toReturn;
 }
 
+void DatalogProgram::buildDependancyGraph() {
+  
+}
+
 void DatalogProgram::parseQueries() {
 	vector<Query> * querys = &ql.myQueries;
 	vector<Query>::iterator it;
