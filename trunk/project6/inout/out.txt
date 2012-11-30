@@ -1,0 +1,12 @@
+Schemes populated after 4 passes through the Rules.
+cn('CS101',Name)? Yes(3)
+  Name='C. Brown'
+  Name='P. Patty'
+  Name='Snoopy'
+ncg('Snoopy',Course,Grade)? Yes(1)
+  Course='CS101', Grade='C'
+SonOf('Rick',son)? Yes(1)
+  son='Aaron'
+Sibling('Aaron',sister)? Yes(1)
+  sister='Elyssa'
+Done!
