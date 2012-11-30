@@ -19,7 +19,8 @@ string DatalogProgram::toString() {
 }
 
 void DatalogProgram::buildDependancyGraph() {
-  
+  cout << ql.myQueries.length() << enld;
+  cout << rl.myRules.length() << endl;
 }
 
 void DatalogProgram::parseQueries() {
