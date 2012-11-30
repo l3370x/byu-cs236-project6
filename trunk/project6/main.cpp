@@ -20,12 +20,13 @@ int main(int argc, char **argv) {
 		DatalogProgram d(scn.getTokenHolder());
 
 		d.buildDatabase();
-    d.buildDependancyGraph();
-		d.parseQueries();
-		d.queries += "Done!";
+    
+    string toSave = d.buildDependancyGraph();
+		//d.parseQueries();
+		//d.queries += "Done!";
 
 		Saver sav(argv[2]);
-		sav.save(d.getQueries(), 0);
+		sav.save(toSave, 0);
 	} catch(Token &e) {
 		Saver sav(argv[2]);
 		sav.save(e.toString(), 1);
