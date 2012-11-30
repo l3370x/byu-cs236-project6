@@ -18,13 +18,15 @@ string DatalogProgram::toString() {
 	return toReturn;
 }
 
-void DatalogProgram::buildDependancyGraph() {
+string DatalogProgram::buildDependancyGraph() {
+  string toReturn;
   for( int i = 1 ; i <= ql.myQueries.size() ; i++ ) {
     cout << "  Q" << i << endl;  
   }
   for( int i = 1 ; i <= rl.myRules.size() ; i++ ) {
     cout << "  R" << i << endl; 
   }
+  return toReturn;
 }
 
 void DatalogProgram::parseQueries() {
