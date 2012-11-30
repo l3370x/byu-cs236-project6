@@ -13,11 +13,8 @@
 using namespace std;
 
 class SchemeList;
-
 class FactList;
-
 class RuleList;
-
 class QueryList;
 
 class DatalogProgram {
