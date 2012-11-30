@@ -20,6 +20,7 @@ int main(int argc, char **argv) {
 		DatalogProgram d(scn.getTokenHolder());
 
 		d.buildDatabase();
+    d.buildDependancyGraph();
 		d.parseQueries();
 		d.queries += "Done!";
 
