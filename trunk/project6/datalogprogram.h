@@ -34,7 +34,7 @@ public:
     Database db;
     int ruleIterations;
 
-    void buildDependancyGraph();
+    string buildDependancyGraph();
     set<Tuple> addFirst(Predicate & s);
     void buildDatabaseFromScheme(Scheme &s);
     set<Tuple> addAll(set<Tuple> & tups, string s);
