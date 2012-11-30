@@ -10,7 +10,7 @@ using namespace std;
 int main(int argc, char **argv) {
 	// check command line arguments
 	if (argc != 3) {
-		cout << "USAGE: lab4 [input filename] [output filename]." << endl;
+		cout << "USAGE: lab6 [input filename] [output filename]." << endl;
 		return(-1);
 	}
 	try {
