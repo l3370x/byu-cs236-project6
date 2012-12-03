@@ -21,12 +21,11 @@ int main(int argc, char **argv) {
 
 		d.buildDatabase();
 
-		d.parseQueries();
+		//d.parseQueries();
 		//d.queries += "Done!";
 
 		string toSave = d.buildDependancyGraph();
 		toSave += d.EvaluateQueries();
-		cout << toSave << endl;
 
 		Saver sav(argv[2]);
 		sav.save(toSave, 0);
