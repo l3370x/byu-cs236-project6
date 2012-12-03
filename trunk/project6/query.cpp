@@ -16,6 +16,23 @@ string Query::toString() {
 	return myPredicate.toString();
 }
 
+string Query::makeDependancyGraph(RuleList & rl) {
+	string toReturn;
+	vector<Rule>::iterator it;
+	int i = 1;
+	for ( it=rl.myRules.begin() ; it != rl.myRules.end() ; ++it ) {
+		if(myPredicate.myID.value.compare((*it).myPredicate.myID.value) == 0) {
+			toReturn += "  R" + UsefulFunctions::convertInt(i) + "  ";
+		}
+		i = i + 1;
+	}
+	return toReturn;
+}
+
+string Query::postOrder(map<string,Node> & DG) {
+
+}
+
 bool Query::allIdsMatch(vector<Parameter> & QueryVals, const Tuple &nextT,
 		int i) {
 	string val = nextT.myValues[i].val;

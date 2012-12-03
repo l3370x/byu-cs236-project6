@@ -18,15 +18,44 @@ string DatalogProgram::toString() {
 	return toReturn;
 }
 
+string printDGraph(map<string,Node> & DG) {
+	string toReturn = "Dependancy Graph\n";
+	map<string,Node>::iterator it;
+	for ( it = DG.begin() ; it != DG.end() ; ++it ) {
+		toReturn += "  " + (*it).first;
+		toReturn += ": ";
+		if(!(*it).second.myChildren.empty()) {
+			set<string>::iterator it2;
+			for ( it2=(*it).second.myChildren.begin() ;
+					it2 != (*it).second.myChildren.end(); ++it2 )
+				toReturn += (*it2) + " ";
+		}
+		toReturn += "\n";
+	}
+
+	return toReturn;
+}
+
 string DatalogProgram::buildDependancyGraph() {
-  string toReturn;
-  for( int i = 1 ; i <= ql.myQueries.size() ; i++ ) {
-    cout << "  Q" << i << endl;  
-  }
-  for( int i = 1 ; i <= rl.myRules.size() ; i++ ) {
-    cout << "  R" << i << endl; 
-  }
-  return toReturn;
+	string toReturn = "";
+	ql.AddToDG(DGraph,rl);
+	rl.AddToDG(DGraph);
+	toReturn += printDGraph(DGraph);
+	cout << toReturn << endl;
+	return toReturn;
+}
+
+string DatalogProgram::EvaluateQueries() {
+	string toReturn;
+	vector<Query>::iterator it;
+	for (it = ql.myQueries.begin(); it != ql.myQueries.end(); it++) {
+		cout << "adding " << (*it).toString() << endl;
+		toReturn += (*it).toString() + "?\n";
+		toReturn += (*it).postOrder(DGraph);
+		//toReturn += (*it).ruleEvaluation(DGraph);
+		//toReturn += (*it).backwardEdges(DGraph);
+	}
+	return toReturn;
 }
 
 void DatalogProgram::parseQueries() {

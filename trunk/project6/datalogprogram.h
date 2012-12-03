@@ -9,6 +9,8 @@
 #include "domain.h"
 #include <iostream>
 #include "Database.h"
+#include "Node.h"
+
 
 using namespace std;
 
@@ -33,8 +35,10 @@ public:
     string queries;
     Database db;
     int ruleIterations;
+    map<string, Node> DGraph;
 
     string buildDependancyGraph();
+    string EvaluateQueries();
     set<Tuple> addFirst(Predicate & s);
     void buildDatabaseFromScheme(Scheme &s);
     set<Tuple> addAll(set<Tuple> & tups, string s);

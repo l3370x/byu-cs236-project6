@@ -7,6 +7,8 @@
 #include "UsefulFunctions.h"
 #include <vector>
 #include "domain.h"
+#include <map>
+#include "Node.h"
 
 class Rule;
 
@@ -17,6 +19,8 @@ public:
     string toString();
 
     vector<Rule> myRules;
+    void AddToDG(map<string, Node> & DG);
+    void findConnections(Node & toAdd, Rule & r);
 };
 
 #endif // RULELIST_H
