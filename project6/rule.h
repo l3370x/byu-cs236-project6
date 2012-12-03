@@ -17,6 +17,8 @@ public:
     Predicate myPredicate;
     PredicateList myPredicateList;
 
+    string makeDependancyGraph(RuleList & rl);
+
 };
 
 #endif // RULE_H

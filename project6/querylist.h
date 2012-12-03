@@ -6,6 +6,9 @@
 #include <vector>
 #include "UsefulFunctions.h"
 #include "domain.h"
+#include "Node.h"
+#include <map>
+
 
 class Query;
 
@@ -18,6 +21,7 @@ public:
 
     vector<Query> myQueries;
 
+    void AddToDG(map<string,Node> & DG,RuleList & rl);
 };
 
 #endif // QUERYLIST_H

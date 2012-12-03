@@ -5,6 +5,8 @@
 #include "predicate.h"
 #include "Database.h"
 #include <iostream>
+#include "rulelist.h"
+#include "rule.h"
 
 class Query {
 public:
@@ -16,7 +18,8 @@ public:
     Relation getQueryFinalRelation() const;
     void setQueryFinalRelation(Relation &queryFinalRelation);
     string printFinalRelationValues();
-
+    string makeDependancyGraph(RuleList & rl);
+    string postOrder(map<string,Node> & DG);
 
     Predicate myPredicate;
     Relation queryFinalRelation;

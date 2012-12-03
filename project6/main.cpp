@@ -20,10 +20,13 @@ int main(int argc, char **argv) {
 		DatalogProgram d(scn.getTokenHolder());
 
 		d.buildDatabase();
-    
-    string toSave = d.buildDependancyGraph();
-		//d.parseQueries();
+
+		d.parseQueries();
 		//d.queries += "Done!";
+
+		string toSave = d.buildDependancyGraph();
+		toSave += d.EvaluateQueries();
+		cout << "i am here " << endl;
 
 		Saver sav(argv[2]);
 		sav.save(toSave, 0);
