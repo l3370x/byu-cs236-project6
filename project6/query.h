@@ -19,7 +19,10 @@ public:
     void setQueryFinalRelation(Relation &queryFinalRelation);
     string printFinalRelationValues();
     string makeDependancyGraph(RuleList & rl);
-    string postOrder(map<string,Node> & DG);
+    string postOrder(map<string,Node> & DG, int i);
+
+	string ruleEvaluation(map<string,Node> & DG);
+	string backwardEdges(map<string,Node> & DG);
 
     Predicate myPredicate;
     Relation queryFinalRelation;
