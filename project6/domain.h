@@ -22,4 +22,4 @@ private:
     set<string> myDomain;
 };
 
-#endif // DOMAIN_H
+#endif  // DOMAIN_H

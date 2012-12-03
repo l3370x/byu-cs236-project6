@@ -25,11 +25,11 @@ string Parameter::toString() {
 }
 
 Parameter::Parameter(Attribute& a) {
-	this->myParam.type = STRING;
-	if(a.isIDbool){
-		this->myParam.type = ID;
-	}
-	this->myParam.value = a.value;
+    this->myParam.type = STRING;
+    if (a.isIDbool) {
+        this->myParam.type = ID;
+    }
+    this->myParam.value = a.value;
 }
 
 Token Parameter::getMyParam() const {

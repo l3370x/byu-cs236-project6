@@ -14,4 +14,4 @@ public:
     Predicate myPredicate;
 };
 
-#endif // FACT_H
+#endif  // FACT_H

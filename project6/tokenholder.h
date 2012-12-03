@@ -21,4 +21,4 @@ public:
     int hasTokens();
 };
 
-#endif // TOKENHOLDER_H
+#endif  // TOKENHOLDER_H

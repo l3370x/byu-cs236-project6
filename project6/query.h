@@ -19,10 +19,10 @@ public:
     void setQueryFinalRelation(Relation &queryFinalRelation);
     string printFinalRelationValues();
     string makeDependancyGraph(RuleList & rl);
-    string postOrder(map<string,Node> & DG, int i);
+    string postOrder(map<string, Node> & DG, int i);
 
-	string ruleEvaluation(map<string,Node> & DG);
-	string backwardEdges(map<string,Node> & DG);
+    string ruleEvaluation(map<string, Node> & DG);
+    string backwardEdges(map<string, Node> & DG);
 
     Predicate myPredicate;
     Relation queryFinalRelation;
@@ -30,13 +30,14 @@ public:
     void checkTuples(Relation &nextR);
     void checkParameters(const Tuple &nextT);
     bool isValidQuery(vector<Parameter> &QueryValues, const Tuple &nextT,
-    		int i);
+                      int i);
     string checkFinalRelationTuples(set<string> & toCheck, const Tuple &nextT);
     void checkFinalRelationParameters(vector<Parameter> &QueryValues, int i,
-    		set<string> & alreadyDone, const Tuple &nextT, string & add,
-    		bool & hasID);
+                                      set<string> & alreadyDone,
+                                      const Tuple &nextT, string & add,
+                                      bool & hasID);
     string checkFinalRelationDuplicates(set<string> & toCheck, string add,
-    		bool containsID, bool & changed);
+                                        bool containsID, bool & changed);
 };
 
-#endif // QUERY_H
+#endif  // QUERY_H

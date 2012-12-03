@@ -45,7 +45,8 @@ public:
     void addVals(vector<Value> & v , int i, set<Tuple> s);
     vector<Tuple> checkPrevQs(Query & Qs , Query & q);
     void compareAndInsertMatches(Query & q, vector<int> & matches,
-    		Tuple & it, Query & querys, vector<Tuple> & toReturn);
+                                 Tuple & it, Query & querys,
+                                 vector<Tuple> & toReturn);
     vector<Tuple> comparePred(Query & q, vector<int> & matches, Tuple & it);
     void parseFirstPred(vector<Tuple> & Ts, Query & q);
     void parseOtherPreds(vector<Tuple>& Ts, Query& Qs, Query& q);
@@ -53,7 +54,6 @@ public:
     void checkTuples(set<Tuple> & tups, Predicate & p);
     void parseRule(Rule & r, int len);
     bool parseRules();
-
 };
 
-#endif // DATALOGPROGRAM_H
+#endif  // DATALOGPROGRAM_H

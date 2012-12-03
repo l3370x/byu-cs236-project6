@@ -11,8 +11,8 @@ Relation::Relation() {
 }
 
 Relation::Relation(string & s, const Schema & sch) {
-	this->name = s;
-	this->Sch = sch;
+    this->name = s;
+    this->Sch = sch;
 }
 
 void Relation::setSch(Schema sch) {
@@ -20,10 +20,10 @@ void Relation::setSch(Schema sch) {
 }
 
 void Relation::setSch(ParameterList & p) {
-	vector<Parameter>::iterator it;
-	for (it = p.myParameters.begin() ; it < p.myParameters.end() ; ++it) {
-		this->Sch.myAttributes.push_back(Attribute((*it).myParam));
-	}
+    vector<Parameter>::iterator it;
+    for (it = p.myParameters.begin() ; it < p.myParameters.end() ; ++it) {
+        this->Sch.myAttributes.push_back(Attribute((*it).myParam));
+    }
 }
 
 void Relation::setName(string name) {

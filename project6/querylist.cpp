@@ -39,27 +39,28 @@ vector<Query> QueryList::getMyQueries() const {
 }
 
 void findConnection(Node & toAdd, Query & q, RuleList & rl) {
-	vector<Rule>::iterator it;
-	int i = 1;
-	for ( it = rl.myRules.begin() ; it != rl.myRules.end() ; ++it) {
-		if(q.myPredicate.myID.value.compare((*it).myPredicate.myID.value) == 0) {
-			string theRule = "R";
-			theRule += UsefulFunctions::convertInt(i);
-			toAdd.myChildren.insert(theRule);
-		}
-		i = i + 1;
-	}
+    vector<Rule>::iterator it;
+    int i = 1;
+    for ( it = rl.myRules.begin() ; it != rl.myRules.end() ; ++it ) {
+        if (q.myPredicate.myID.value.compare(
+                    (*it).myPredicate.myID.value) == 0) {
+            string theRule = "R";
+            theRule += UsefulFunctions::convertInt(i);
+            toAdd.myChildren.insert(theRule);
+        }
+        i = i + 1;
+    }
 }
 
-void QueryList::AddToDG(map<string, Node>& DG,RuleList & rl) {
-	vector<Query>::iterator it;
-	int i = 1;
-	for( it = myQueries.begin() ; it != myQueries.end() ; ++it ) {
-		Node toAdd(i,true);
-		findConnection(toAdd,(*it),rl);
-		DG["Q" + UsefulFunctions::convertInt(i)] = toAdd;
-		i = i + 1;
-	}
+void QueryList::AddToDG(map<string, Node>& DG, RuleList & rl) {
+    vector<Query>::iterator it;
+    int i = 1;
+    for ( it = myQueries.begin() ; it != myQueries.end() ; ++it ) {
+        Node toAdd(i, true);
+        findConnection(toAdd, (*it), rl);
+        DG["Q" + UsefulFunctions::convertInt(i)] = toAdd;
+        i = i + 1;
+    }
 }
 
 

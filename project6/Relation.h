@@ -24,11 +24,9 @@ public:
     Schema Sch;
     set<Tuple> myTuples;
 
-
 public:
-
     Relation();
-    Relation(string & s, const Schema & sch) ;
+    Relation(string & s, const Schema & sch);
     void setName(string name);
     void setSch(Schema sch);
     void setSch(ParameterList & p);
@@ -36,14 +34,11 @@ public:
     void addTuple(Tuple &t);
     void removeTuple(Tuple &t);
 
-
-
     void rename();
     void select();
     void project();
     void fUnion();
     void join();
-
 };
 
 #endif /* RELATION_H_ */

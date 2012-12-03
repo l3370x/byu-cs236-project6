@@ -12,7 +12,6 @@ public:
     string toString();
 
     vector<Predicate> myPredicates;
-
 };
 
-#endif // PREDICATELIST_H
+#endif  // PREDICATELIST_H

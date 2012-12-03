@@ -12,13 +12,11 @@ public:
     Rule();
     string toString();
 
-private:
 public:
     Predicate myPredicate;
     PredicateList myPredicateList;
 
     string makeDependancyGraph(RuleList & rl);
-
 };
 
-#endif // RULE_H
+#endif  // RULE_H

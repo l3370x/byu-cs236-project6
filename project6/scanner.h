@@ -11,7 +11,7 @@
 using namespace std;
 
 class scanner {
-private: //make private
+private:  // make private
     myStream s;
     TokenHolder tokHolder;
     string error;
@@ -49,4 +49,4 @@ public:
     */
 };
 
-#endif // SCANNER_H
+#endif  // SCANNER_H

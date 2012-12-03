@@ -23,34 +23,34 @@ void Schema::addAttribute(Attribute a) {
 }
 
 Schema::Schema(vector<Predicate>& p) {
-	vector<Predicate>::iterator it;
-	for ( it = p.begin() ; it < p.end() ; ++it ) {
-		this->myAttributes.push_back(Attribute((*it).myID));
-	}
+    vector<Predicate>::iterator it;
+    for ( it = p.begin() ; it < p.end() ; ++it ) {
+        this->myAttributes.push_back(Attribute((*it).myID));
+    }
 }
 
 Schema::Schema(vector<Parameter>& p) {
-	vector<Parameter>::iterator it;
-	for ( it = p.begin() ; it < p.end() ; ++it ) {
-		this->myAttributes.push_back(Attribute((*it).myParam));
-	}
+    vector<Parameter>::iterator it;
+    for ( it = p.begin() ; it < p.end() ; ++it ) {
+        this->myAttributes.push_back(Attribute((*it).myParam));
+    }
 }
 
 Schema::Schema(Predicate& p) {
-	vector<Parameter>::iterator it;
-	for ( it = p.myParameterList.myParameters.begin() ;
-			it < p.myParameterList.myParameters.end() ; ++it ) {
-		if((*it).myParam.type == ID) {
-			this->myAttributes.push_back(Attribute((*it).myParam));
-		}
-	}
+    vector<Parameter>::iterator it;
+    for ( it = p.myParameterList.myParameters.begin() ;
+            it < p.myParameterList.myParameters.end() ; ++it ) {
+        if ((*it).myParam.type == ID) {
+            this->myAttributes.push_back(Attribute((*it).myParam));
+        }
+    }
 }
 
 void Schema::addAtts(Schema& t) {
-	vector<Attribute>::iterator it;
-	for ( it = t.myAttributes.begin() ; it < t.myAttributes.end() ; ++it){
-		this->myAttributes.push_back((*it));
-	}
+    vector<Attribute>::iterator it;
+    for (it = t.myAttributes.begin() ; it < t.myAttributes.end() ; ++it) {
+        this->myAttributes.push_back((*it));
+    }
 }
 
 string Schema::toString() {
