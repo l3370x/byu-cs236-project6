@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 
 		string toSave = d.buildDependancyGraph();
 		toSave += d.EvaluateQueries();
-		cout << "i am here " << endl;
+		cout << toSave << endl;
 
 		Saver sav(argv[2]);
 		sav.save(toSave, 0);

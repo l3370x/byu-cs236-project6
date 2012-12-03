@@ -10,6 +10,9 @@
 
 #include <set>
 #include <string>
+#include <map>
+#include <iostream>
+#include "UsefulFunctions.h"
 
 using namespace std;
 
@@ -24,6 +27,10 @@ public:
 	set<string> myChildren;
 	bool visited;
 	int postorder;
+
+	int recurseDG(map<string,Node> & DG, int & i);
+	string printPostorder(map<string,Node> & DG);
+	int hasBackwardEdge(map<string,Node> & DG);
 };
 
 #endif /* NODE_H_ */

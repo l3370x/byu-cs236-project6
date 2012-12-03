@@ -29,8 +29,55 @@ string Query::makeDependancyGraph(RuleList & rl) {
 	return toReturn;
 }
 
-string Query::postOrder(map<string,Node> & DG) {
 
+string Query::postOrder(map<string,Node> & DG, int i) {
+	string toReturn = "  Postorder Numbers\n";
+	set<string>::iterator it;
+	int j = 0;
+	for ( it = DG["Q"+UsefulFunctions::convertInt(i)].myChildren.begin() ;
+			it != DG["Q"+UsefulFunctions::convertInt(i)].myChildren.end() ;
+			++it) {
+		DG["Q"+UsefulFunctions::convertInt(i)].postorder =
+				DG["Q"+UsefulFunctions::convertInt(i)].recurseDG(DG,j);
+	}
+	toReturn += DG["Q"+UsefulFunctions::convertInt(i)].printPostorder(DG);
+	toReturn += "\n";
+	return toReturn;
+}
+
+string Query::ruleEvaluation(map<string,Node> & DG) {
+	string toReturn = "  Rule Evaluation Order\n";
+	map<string,Node>::iterator it;
+	map<int,string> output;
+	for ( it = DG.begin() ; it != DG.end() ; ++it) {
+		if((*it).second.visited && !(*it).second.isQuery) {
+			string toAdd = "    " + (*it).first + "\n";
+			output.insert(pair<int,string>((*it).second.postorder,toAdd));
+		}
+	}
+	map<int,string>::iterator it2;
+	for ( it2 = output.begin() ; it2 != output.end() ; ++it2 ) {
+		toReturn += (*it2).second;
+	}
+	return toReturn;
+}
+
+string Query::backwardEdges(map<string,Node> & DG) {
+	string toReturn = "  Backward Edges\n";
+	map<string,Node>::iterator it;
+	set<string> output;
+	for ( it = DG.begin() ; it != DG.end() ; ++it) {
+		if(int i = (*it).second.hasBackwardEdge(DG)) {
+			string toAdd = "    " + (*it).first + ": R";
+			toAdd += UsefulFunctions::convertInt(i) + "\n";
+			output.insert(toAdd);
+		}
+	}
+	set<string>::iterator it2;
+	for ( it2 = output.begin() ; it2 != output.end() ; ++it2 ) {
+		toReturn += (*it2);
+	}
+	return toReturn;
 }
 
 bool Query::allIdsMatch(vector<Parameter> & QueryVals, const Tuple &nextT,
