@@ -23,4 +23,4 @@ public:
     void findConnections(Node & toAdd, Rule & r);
 };
 
-#endif // RULELIST_H
+#endif  // RULELIST_H

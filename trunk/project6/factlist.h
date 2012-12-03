@@ -19,4 +19,4 @@ public:
     vector<Fact> myFacts;
 };
 
-#endif // FACTLIST_H
+#endif  // FACTLIST_H

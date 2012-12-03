@@ -13,4 +13,4 @@ public:
     Predicate myPredicate;
 };
 
-#endif // SCHEME_H
+#endif  // SCHEME_H

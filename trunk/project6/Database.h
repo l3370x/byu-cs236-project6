@@ -27,4 +27,4 @@ public:
     vector<Relation> myRelations;
 };
 
-#endif /* DATABASE_H_ */
+#endif  /* DATABASE_H_ */

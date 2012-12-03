@@ -9,7 +9,7 @@
 using namespace std;
 
 class myStream {
-private: //make private
+private:  // make private
     int lineNum;
     int currentChar;
     int prevChar;
@@ -24,4 +24,4 @@ public:
     bool eofReached;
 };
 
-#endif // STREAM_H
+#endif  // STREAM_H

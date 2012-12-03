@@ -11,7 +11,7 @@ Value::Value() {
 }
 
 Value::Value(string val) {
-	this->val = val;
+    this->val = val;
 }
 
 

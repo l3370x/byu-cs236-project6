@@ -19,4 +19,4 @@ public:
     vector <Scheme> mySchemes;
 };
 
-#endif // SCHEMELIST_H
+#endif  // SCHEMELIST_H

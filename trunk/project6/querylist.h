@@ -21,7 +21,7 @@ public:
 
     vector<Query> myQueries;
 
-    void AddToDG(map<string,Node> & DG,RuleList & rl);
+    void AddToDG(map<string, Node> & DG, RuleList & rl);
 };
 
-#endif // QUERYLIST_H
+#endif  // QUERYLIST_H

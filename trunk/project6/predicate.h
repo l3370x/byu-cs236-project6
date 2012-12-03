@@ -17,4 +17,4 @@ public:
     ParameterList myParameterList;
 };
 
-#endif // PREDICATE_H
+#endif  // PREDICATE_H

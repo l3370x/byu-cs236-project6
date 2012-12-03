@@ -13,7 +13,6 @@ public:
     Saver(char * filename);
     void save(string what, int error);
     ~Saver();
-
 };
 
-#endif // SAVER_H
+#endif  // SAVER_H

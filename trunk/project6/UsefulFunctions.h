@@ -11,7 +11,6 @@ using namespace std;
 
 class UsefulFunctions {
 public:
-
     static string convertInt(int number) {
         stringstream ss;
         ss << number;
@@ -26,11 +25,11 @@ public:
         return true;
     }
     static time_t theTimeIs() {
-    	time_t seconds;
-    	seconds = time(NULL);
-    	return seconds;
+        time_t seconds;
+        seconds = time(NULL);
+        return seconds;
     }
 };
 
 
-#endif // USEFULFUNCTIONS_H
+#endif  // USEFULFUNCTIONS_H

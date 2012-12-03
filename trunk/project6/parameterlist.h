@@ -15,4 +15,4 @@ public:
     vector<Parameter> myParameters;
 };
 
-#endif // PARAMETERLIST_H
+#endif  // PARAMETERLIST_H

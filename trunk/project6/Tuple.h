@@ -27,4 +27,4 @@ public:
     vector<Value> myValues;
 };
 
-#endif /* TUPLE_H_ */
+#endif  /* TUPLE_H_ */

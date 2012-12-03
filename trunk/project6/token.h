@@ -31,4 +31,4 @@ public:
     void setValue(string s);
 };
 
-#endif // TOKEN_H
+#endif  // TOKEN_H

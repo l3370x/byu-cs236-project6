@@ -15,4 +15,4 @@ public:
     Token myParam;
 };
 
-#endif // PARAMETER_H
+#endif  // PARAMETER_H
