@@ -8,6 +8,7 @@ GPA(x,y)
 Smart(x)
 SmartAncestor(x,y)
 GT(x,y)
+G(a,b)
 
 Facts:
 
@@ -18,9 +19,40 @@ Ancestor(x,y):-SmartAncestor(y,x).
 Sibling(x,y):-Sibling(y,x).
 Smart(x):-GPA(x,y),GT(y,'3.7').
 SmartAncestor(x,y):-Smart(x),Ancestor(x,y).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+G(a,b):-G(b,a).
+
 
 Queries:
-SmartAncestor(x,'me')?
-Sibling('me', 'Rachel')?
-
+G('a','b')?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
+G('a',b)?
 

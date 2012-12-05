@@ -13,6 +13,7 @@
 #include <map>
 #include <iostream>
 #include "UsefulFunctions.h"
+#include <vector>
 
 using namespace std;
 
@@ -30,7 +31,7 @@ public:
 
     int recurseDG(map<string, Node> & DG, int & i);
     string printPostorder(map<string, Node> & DG);
-    int hasBackwardEdge(map<string, Node> & DG);
+    vector<int> hasBackwardEdge(map<string, Node> & DG);
 };
 
 #endif  /* NODE_H_ */
